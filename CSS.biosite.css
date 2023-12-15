@@ -24,7 +24,10 @@
 				background-color: #2a1f14
 			}
 			/* Style rules for mobile viewport */
-				@media (max-width: 768px) {
+				@media screen and (max-width: 768px) {
+                    main {
+                        grid-template-columns: 1fr;
+                    }
 					fieldset,
 					input,
 					textarea {
@@ -61,8 +64,12 @@
             header {
                 position: relative; /* Changed header positioning */
                 z-index: 2; /* Set a higher z-index than the navigation */
-				background-color: #000;
+				background-color: #b36197;
 				height: 190px;
+                display: flex;
+                flex-direction: column;
+                justify-content: center;
+                align-items: center;
         }
 	
 			header img {
@@ -118,11 +125,31 @@
 			
 			
 		/* style rules for main content */
+            main section {
+                padding: 20px;
+            }
+            
+            main section:nth-child(odd) {
+                background-color: #8d62a1; /* desired background color set for odd rows*/
+            }
+            
+            main section:nth-child(even) {
+                background-color: #34044b; /* desired background color set for even rows */
+            }
+
 			main {
+                display: flex;
+                flex-wrap: wrap;
+                gap: 20px;
 				padding: 2%;
 				font-family: Emblema One, Lora;
 			}
-			main p {
+         /* Style rules for sections within main */
+            main section {
+                 flex: 1 0 calc(50% - 20px);
+                 box-sizing: border-box;
+            }
+                            main p {
 				font-size: 1.25em;
 			}
 			
@@ -204,7 +231,7 @@
 				 @media screen and (min-width: 620px), print {
 				.grid {					
 					display: grid;
-					grid-template-columns: auto auto;
+					grid-template-columns: repeat(2, 1fr);
 					grid-gap: 10px;
 				}
 				aside {
@@ -262,7 +289,7 @@
 						}
 						.grid {
 							display: grid;
-							grid-template-columns: repeat(4, 1fr);
+							grid-template-columns: repeat(2, 1fr);
 						}
 						aside {
 							grid-column: 1 / span 4;
@@ -291,7 +318,7 @@
 							  }
 						 .form-grid {
 								display: grid;
-								grid-template-columns: auto auto;
+								grid-template-columns: repeat(2, 1fr);
 								grid-gap: 20px;
 							  }
 						 .btn {
@@ -350,7 +377,7 @@
 								display: none;
 							}
 							
-                    /* Desktop Viewport: Style Rules for Nav Area */
+        /* Desktop Viewport: Style Rules for Nav Area */
                    
                     .top-nav {
                         float: right;
