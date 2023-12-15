@@ -22,7 +22,14 @@
                 width: 25%;
                 align-content: center;
             }
-			
+			.hero-banner {
+                text-align: center; /* Center the image within the div */
+            }
+            
+            .hero-banner img {
+                max-width: 50%; /* Ensure the image doesn't exceed its container */
+                height: auto; /* Maintain the image's aspect ratio */
+            }
 			
 			nav {
 				background-color: #2a1f14
